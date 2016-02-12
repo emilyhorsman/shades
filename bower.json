@@ -7,5 +7,6 @@
   "description": "Personal Sass mixin library",
   "main": "shades.scss",
   "moduleType": [],
-  "license": "MIT"
+  "license": "MIT",
+  "ignore": []
 }
