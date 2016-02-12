@@ -1,0 +1,11 @@
+{
+  "name": "shades",
+  "homepage": "https://github.com/emilyhorsman/shades",
+  "authors": [
+    "Emily Horsman <me@emilyhorsman.com>"
+  ],
+  "description": "Personal Sass mixin library",
+  "main": "shades.scss",
+  "moduleType": [],
+  "license": "MIT"
+}
