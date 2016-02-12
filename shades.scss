@@ -1,0 +1,62 @@
+@mixin tag($height: 30px, $bg: false) {
+  $sub-height: $height * 0.75;
+
+  @if $bg {
+    background-color: $bg;
+  }
+
+  display: inline-block;
+  padding-left: $height * 0.57;
+  line-height: $height;
+  border-radius: $height / 2;
+
+  a {
+    display: inline-block;
+    box-sizing: content-box;
+
+    height: 100%;
+    width: $height;
+    padding-left: 6px;
+  }
+
+  a:after {
+    @if $bg {
+      background-color: darken($bg, 5%);
+    }
+
+    content: '×';
+    display: inline-block;
+
+    text-align: center;
+
+    margin: ($height - $sub-height) / 2;
+    height: $sub-height;
+    width: $sub-height;
+    line-height: $sub-height;
+
+    border-radius: 50%;
+  }
+
+  a:hover {
+    cursor: pointer;
+    &:after {
+      background-color: darken($bg, 10%);
+    }
+  }
+}
+
+@mixin fade-in {
+  animation: fade-in 0.25s ease;
+}
+
+@mixin spacing($spacing: 3px) {
+  margin: $spacing;
+
+  &:first-of-type {
+    margin-left: 0;
+  }
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
