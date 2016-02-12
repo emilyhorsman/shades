@@ -60,3 +60,30 @@
     margin-right: 0;
   }
 }
+
+@function contrasting-fg-color($bg) {
+  @if lightness($bg) > 50 {
+    @return black;
+  } @else {
+    @return white;
+  }
+}
+
+@mixin flat-button($color, $size: 18px, $weight: 100) {
+  position: relative;
+  background-color: transparent;
+  font-size: $size;
+  font-weight: $weight;
+  padding: 5px 10px;
+  transition: all 0.25s ease;
+
+  border: 1px solid $color;
+  color: $color;
+  border-radius: 3px;
+
+  &:hover {
+    background-color: $color;
+    cursor: pointer;
+    color: contrasting-fg-color($color);
+  }
+}
