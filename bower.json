@@ -11,6 +11,7 @@
   "ignore": [
     ".gitignore",
     ".scss-lint.yml",
-    "Gemfile"
+    "Gemfile*",
+    "README.md"
   ]
 }
