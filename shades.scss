@@ -1,3 +1,6 @@
+$white: #fff !default;
+$black: #000 !default;
+
 @mixin tag($height: 30px, $bg: false) {
   $sub-height: $height * 0.75;
 
@@ -11,15 +14,15 @@
   border-radius: $height / 2;
 
   a {
-    display: inline-block;
     box-sizing: content-box;
+    display: inline-block;
 
     height: 100%;
-    width: $height;
     padding-left: 6px;
+    width: $height;
   }
 
-  a:after {
+  a::after {
     @if $bg {
       background-color: darken($bg, 5%);
     }
@@ -39,7 +42,8 @@
 
   a:hover {
     cursor: pointer;
-    &:after {
+
+    &::after {
       background-color: darken($bg, 10%);
     }
   }
@@ -63,9 +67,9 @@
 
 @function contrasting-fg-color($bg) {
   @if lightness($bg) > 50 {
-    @return black;
+    @return $black;
   } @else {
-    @return white;
+    @return $white;
   }
 }
 
@@ -89,10 +93,12 @@
 }
 
 @mixin reset($font-family...) {
+  // scss-lint:disable SingleLinePerSelector
   article, aside, details, figcaption, figure,
   footer, header, hgroup, menu, nav, section {
     display: block;
   }
+  // scss-lint:enable SingleLinePerSelector
 
   html {
     box-sizing: border-box;
@@ -102,7 +108,9 @@
     }
   }
 
-  *, *:before, *:after {
+  *,
+  *::before,
+  *::after {
     box-sizing: inherit;
   }
 

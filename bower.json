@@ -8,5 +8,9 @@
   "main": "shades.scss",
   "moduleType": [],
   "license": "MIT",
-  "ignore": []
+  "ignore": [
+    ".gitignore",
+    ".scss-lint.yml",
+    "Gemfile"
+  ]
 }
