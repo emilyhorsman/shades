@@ -4,7 +4,7 @@
   "authors": [
     "Emily Horsman <me@emilyhorsman.com>"
   ],
-  "description": "Personal Sass mixin library",
+  "description": "Sass mixin library",
   "main": "shades.scss",
   "moduleType": [],
   "license": "MIT",
