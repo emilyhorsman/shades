@@ -1,6 +1,26 @@
 $white: #fff !default;
 $black: #000 !default;
 
+@mixin screenreader-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+@mixin clearfix {
+  clear: both;
+  content: ' ';
+  display: block;
+  font-size: 0;
+  height: 0;
+  visibility: hidden;
+}
+
 @mixin tag($height: 30px, $bg: false) {
   $sub-height: $height * 0.75;
 
