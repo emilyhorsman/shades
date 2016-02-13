@@ -1,6 +1,8 @@
 ---
 linters:
+
   LeadingZero:
     style: include_zero
+
   PropertySortOrder:
     enabled: false
