@@ -1,0 +1,26 @@
+{
+  "name": "shades",
+  "version": "1.0.0",
+  "description": "Sass mixin library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emilyhorsman/shades.git"
+  },
+  "author": "Emily Horsman <me@emilyhorsman.com>",
+  "bugs": {
+    "url": "https://github.com/emilyhorsman/shades/issues"
+  },
+  "homepage": "https://github.com/emilyhorsman/shades",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^6.1.0",
+    "gulp-sass": "^2.2.0",
+    "postcss-scss": "^0.1.5"
+  }
+}
