@@ -173,3 +173,9 @@ $grey: #9e9e9e !default;
     margin: 0;
   }
 }
+
+@mixin hyphenate {
+  overflow-wrap: break-word;
+  word-wrap: break-word;  // IE support that autoprefixer won’t handle.
+  hyphens: auto;
+}
