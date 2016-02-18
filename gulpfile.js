@@ -4,6 +4,7 @@
  */
 
 var autoprefixer = require('autoprefixer')
+var cssnano      = require('gulp-cssnano')
 var concat       = require('gulp-concat')
 var gulp         = require('gulp')
 var plumber      = require('gulp-plumber')
@@ -56,4 +57,11 @@ gulp.task('build', function() {
     .pipe(gulp.dest('./'))
 })
 
-gulp.task('default', ['build'])
+gulp.task('build:minify', ['build'], function() {
+  return gulp.src('./build/*.css')
+    .pipe(cssnano())
+    .pipe(concat('shades.min.css'))
+    .pipe(gulp.dest('./build'))
+})
+
+gulp.task('default', ['build:minify'])
