@@ -26,12 +26,24 @@ var addClassForMixins = function(css, opts) {
       return
     }
 
-    // If the mixin has a parameter signature then don’t handle it (yet)
-    if (rule.params.indexOf('(') !== -1) {
+    if (rule.first.text === 'no-class') {
       return
     }
 
-    rule.parent.append('.'  + rule.params + ' { @include ' + rule.params + '; }')
+    var paren = rule.params.indexOf('(')
+    var name = (paren === -1) ? rule.params : rule.params.substr(0, paren)
+
+    var newInclude = '@include ' + name + ';'
+
+    // Mixins with a `global` comment will be applied to the whole document
+    // e.g. the reset mixin
+    //
+    // If not given, a selector matching the mixin name will be applied.
+    if (rule.first.text !== 'global') {
+      newInclude = '.' + name + ' { ' +  newInclude + ' }'
+    }
+
+    css.append(newInclude)
   })
 }
 

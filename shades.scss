@@ -1,6 +1,7 @@
-$white: #fff !default;
 $black: #000 !default;
 $grey: #9e9e9e !default;
+$pink: #d81b60 !default;
+$white: #fff !default;
 
 @mixin screenreader-text {
   position: absolute;
@@ -22,7 +23,7 @@ $grey: #9e9e9e !default;
   visibility: hidden;
 }
 
-@mixin tag($height: 30px, $bg: false) {
+@mixin tag($height: 30px, $bg: null) {
   $sub-height: $height * 0.75;
 
   @if $bg {
@@ -65,7 +66,9 @@ $grey: #9e9e9e !default;
     cursor: pointer;
 
     &::after {
-      background-color: darken($bg, 10%);
+      @if $bg {
+        background-color: darken($bg, 10%);
+      }
     }
   }
 }
@@ -94,7 +97,7 @@ $grey: #9e9e9e !default;
   }
 }
 
-@mixin flat-button-color($color) {
+@mixin flat-button-color($color) {  // no-class
   background-color: transparent;
 
   border-color: $color;
@@ -106,7 +109,7 @@ $grey: #9e9e9e !default;
   }
 }
 
-@mixin flat-button($colors, $size: 18px, $weight: 100) {
+@mixin flat-button($colors: (base: $pink), $size: 18px, $weight: 100) {
   position: relative;
   font-size: $size;
   font-weight: $weight;
@@ -147,7 +150,7 @@ $grey: #9e9e9e !default;
   }
 }
 
-@mixin reset($font-family...) {
+@mixin reset($font-family...) {  // global
   // scss-lint:disable SingleLinePerSelector
   article, aside, details, figcaption, figure,
   footer, header, hgroup, menu, nav, section {
