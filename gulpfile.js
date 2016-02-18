@@ -51,7 +51,7 @@ gulp.task('build', function() {
   return gulp.src(['global.scss', 'shades.scss'])
     .pipe(postcss([ addClassForMixins ], { syntax: scss }))
     .pipe(sass())
-    .pipe(postcss([ autoprefixer ]))
+    .pipe(postcss([ autoprefixer('> 0.2%') ]))
     .pipe(concat('./build/shades.css'))
     .pipe(gulp.dest('./'))
 })
